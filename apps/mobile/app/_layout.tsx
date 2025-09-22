@@ -23,8 +23,8 @@ function App(): ReactElement {
   useLanguage('en');
 
   return (
-    <Stack>
-      <Stack.Screen name='index' />
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name='(tabs)' />
     </Stack>
   );
 }

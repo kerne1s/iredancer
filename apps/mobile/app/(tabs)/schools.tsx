@@ -1,11 +1,11 @@
-import { createStyles } from '@iredancer-react-native/mobile/shared/ui/styles';
+import { colors, createStyles } from '@iredancer-react-native/mobile/shared/ui/styles';
 import { ReactElement } from 'react';
 import { View, Text } from 'react-native';
 
-export default function RootScreen(): ReactElement {
+export default function SchoolsScreen(): ReactElement {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello World</Text>
+      <Text style={styles.text}>Schools</Text>
     </View>
   );
 }
@@ -17,6 +17,6 @@ const styles = createStyles({
     alignItems: 'center',
   },
   text: {
-    color: 'white',
+    color: colors.textPrimary,
   },
 });

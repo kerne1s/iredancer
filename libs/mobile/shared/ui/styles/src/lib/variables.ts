@@ -1,11 +1,11 @@
 export const colors = {
-  primary: '#C32F41',
+  primary: '#4CBB17',
   primaryOpacity: 'rgba(195, 47, 65, 0.5)',
   primaryPressed: '#8C222F',
   primaryDisabled: '#63636B',
   secondary: '#F6BC2B',
 
-  textPrimary: '#F6F6F6',
+  textPrimary: '#101828',
   textBasic: '#1B1A19',
   textSecondary: '#BABABA',
   textTertriary: '#63636B',
