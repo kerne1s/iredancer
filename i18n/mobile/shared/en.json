@@ -1,3 +1,7 @@
 {
-  "SHARED": {}
+  "SHARED": {
+    "TABS_LAYOUT": {
+      "TEXT_SEARCH_COMPETITIONS": "Search Competitions"
+    }
+  }
 }

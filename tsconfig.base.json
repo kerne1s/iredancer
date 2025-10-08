@@ -34,10 +34,14 @@
       "@iredancer-react-native/mobile/shared/data-access/storage": [
         "libs/mobile/shared/data-access/storage/src/index.ts"
       ],
+      "@iredancer-react-native/mobile/shared/features/user-theme-provider": [
+        "libs/mobile/shared/features/user-theme-provider/src/index.ts"
+      ],
       "@iredancer-react-native/mobile/shared/ui/assets": ["libs/mobile/shared/ui/assets/src/index.ts"],
       "@iredancer-react-native/mobile/shared/ui/styles": ["libs/mobile/shared/ui/styles/src/index.ts"],
       "@iredancer-react-native/mobile/shared/ui/ui-kit": ["libs/mobile/shared/ui/ui-kit/src/index.ts"],
       "@iredancer-react-native/mobile/shared/utils/app-env": ["libs/mobile/shared/utils/app-env/src/index.ts"],
+      "@iredancer-react-native/mobile/shared/utils/config": ["libs/mobile/shared/utils/config/src/index.ts"],
       "@iredancer-react-native/mobile/shared/utils/navigation": ["libs/mobile/shared/utils/navigation/src/index.ts"]
     }
   },

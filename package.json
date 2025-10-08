@@ -10,9 +10,11 @@
   },
   "private": true,
   "dependencies": {
+    "@eva-design/eva": "^2.2.0",
     "@expo/metro-config": "~0.20.14",
     "@expo/metro-runtime": "~5.0.4",
     "@ronas-it/react-native-common-modules": "~1.1.0",
+    "@ui-kitten/components": "^5.3.1",
     "expo": "~53.0.10",
     "expo-constants": "~17.1.6",
     "expo-dev-client": "~5.2.0",
