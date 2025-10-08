@@ -1,12 +1,12 @@
+import { Layout } from '@ui-kitten/components';
 import { ReactElement, useMemo } from 'react';
 import { ScrollView, ScrollViewProps, View, ViewProps } from 'react-native';
 import { commonStyle, createStyles, spacings } from '@iredancer-react-native/mobile/shared/ui/styles';
 
 export interface AppScreenProps {
   scrollDisabled?: boolean;
-  hideOutsideSpacing?: boolean;
+  noOutsideSpacing?: boolean;
   withLoader?: boolean;
-  hasForcedFullHeight?: boolean;
 }
 
 interface NonScrollableScreenProps extends ViewProps {
@@ -18,58 +18,36 @@ interface ScrollableScreenProps extends ScrollViewProps {
 }
 
 export function AppScreen(props: AppScreenProps & (ScrollableScreenProps | NonScrollableScreenProps)): ReactElement {
-  const {
-    children,
-    style: elementStyle = {},
-    testID,
-    scrollDisabled,
-    hideOutsideSpacing,
-    withLoader,
-    hasForcedFullHeight,
-    ...restProps
-  } = props;
+  const { children, style: elementStyle = {}, testID, scrollDisabled, noOutsideSpacing, ...restProps } = props;
 
-  const [ViewComponent, viewComponentProps] = useMemo(():
-    | [typeof View, ViewProps]
-    | [typeof ScrollView, ScrollViewProps] => {
-    const generalSpacingStyle = !hideOutsideSpacing && styles.container;
-
-    return scrollDisabled
-      ? [
-          View,
-          {
-            style: [commonStyle.fullFlex, generalSpacingStyle, elementStyle],
-            ...restProps
-          }
-        ]
-      : [
-          ScrollView,
-          {
-            contentContainerStyle: [
-              hasForcedFullHeight && commonStyle.fullFlex,
-              generalSpacingStyle,
-              elementStyle
-            ],
-            showsVerticalScrollIndicator: false,
-            keyboardShouldPersistTaps: 'handled',
-            style: commonStyle.fullFlex,
-            ...restProps
-          }
-        ];
-  }, [scrollDisabled, hasForcedFullHeight, restProps, hideOutsideSpacing]);
+  const [ViewComponent, viewComponentProps] = useMemo(
+    (): [typeof View, ViewProps] | [typeof ScrollView, ScrollViewProps] =>
+      scrollDisabled
+        ? [View, { style: [commonStyle.fullFlex, !noOutsideSpacing && styles.container, elementStyle], ...restProps }]
+        : [
+            ScrollView,
+            {
+              contentContainerStyle: [styles.scroll, !noOutsideSpacing && styles.container, elementStyle],
+              showsVerticalScrollIndicator: false,
+              keyboardShouldPersistTaps: 'handled',
+              ...restProps,
+            },
+          ],
+    [scrollDisabled, restProps, noOutsideSpacing],
+  );
 
   return (
-      <View style={commonStyle.fullFlex} testID={testID}>
-        <ViewComponent {...viewComponentProps}>{children}</ViewComponent>
-      </View>
+    <Layout level='1' style={commonStyle.fullFlex} testID={testID}>
+      <ViewComponent {...viewComponentProps}>{children}</ViewComponent>
+    </Layout>
   );
 }
 
 const styles = createStyles({
-  container: {
-    padding: spacings.contentOffset,
+  scroll: {
+    minHeight: '100%',
   },
-  containerWithNoneBottomSpacing: {
-    paddingBottom: 0
-  }
+  container: {
+    padding: spacings.basicOffset,
+  },
 });

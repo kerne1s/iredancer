@@ -1,38 +1,34 @@
 export const colors = {
-  primary: '#4CBB17',
-  primaryOpacity: 'rgba(195, 47, 65, 0.5)',
-  primaryPressed: '#8C222F',
-  primaryDisabled: '#63636B',
-  secondary: '#F6BC2B',
+  primary: '#1A6AFC',
+  primaryOpacity: '1A6AFC14',
+  primaryPressed: '#1A6AFC',
+  primaryDisabled: '#1A6AFC',
 
-  textPrimary: '#101828',
-  textBasic: '#1B1A19',
-  textSecondary: '#BABABA',
-  textTertriary: '#63636B',
+  textPrimary: '#0A0623',
+  textBasic: '#0A0623',
+  textSecondary: '#8F99B2',
+  textTertriary: '#ECEDF1',
 
-  backgroundPrimary: '#1B1A19',
-  backgroundSecondary: '#292726',
-  backgroundTertiary: '#484442',
+  backgroundPrimary: '#FFFFFF',
+  backgroundSecondary: '#F6F6FA',
+  backgroundTertiary: '#FCF5EF',
 
-  borderPrimary: '#BABABA',
+  borderPrimary: '#C32F41',
   borderSecondary: '#63636B',
 
-  error: '#F93487',
-  success: '#31B264',
-  warning: '#DB8709',
-  active: '#F0F0F0',
+  error: '#C32F41',
+  success: '#63F483',
 };
 
 export const spacings = {
-  elementOffset: '0.5rem', // 8px
-  basicOffset: '1rem', // 16px
-  contentOffset: '1.25rem', // 20px
-  containerOffset: '1.5rem', // 24px
-  containerSecondaryOffset: '2rem', // 32px
+  basicOffset: '1rem',
+  contentOffset: '1.25rem',
+  containerOffset: '1.5rem',
+  containerSecondaryOffset: '2.5rem',
 };
 
 export const fontFamily = {
-  regular: 'System',
-  bold: 'System',
-  semiBold: 'System',
+  regular: 'InstrumentSans Regular',
+  bold: 'InstrumentSans Bold',
+  semiBold: 'InstrumentSans SemiBold',
 };
